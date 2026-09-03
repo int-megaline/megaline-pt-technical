@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
+<style>   
 /* =========================================================
    MEGALINE HTV TRACK RECORD — DESIGN TOKENS
    ========================================================= */
@@ -453,6 +453,69 @@ h1,h2,h3{font-family:var(--font-display);}
 /* section dividing small headers on content slides */
 .mini-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
 .mini-head h3{margin:0;font-size:14px;color:var(--ink);}
+
+
+/* ... 기존 코드 생략 ... */
+
+.mini-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.mini-head h3{margin:0;font-size:14px;color:var(--ink);}
+
+/* =========================================================
+   여기에 @media print 코드를 붙여넣으세요
+   ========================================================= */
+@media print {
+  @page {
+    size: 1280px 720px;
+    margin: 0;
+  }
+
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    width: 1280px !important;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #stage {
+    position: static !important;
+    display: block !important;
+    background: none !important;
+  }
+
+  #viewport {
+    position: static !important;
+    width: 1280px !important;
+    height: auto !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  #chrome,
+  #progress-track,
+  #pager,
+  .nav-arrows,
+  .clickzone,
+  #scrim,
+  #drawer {
+    display: none !important;
+  }
+
+  .slide {
+    position: relative !important;
+    display: flex !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    width: 1280px !important;
+    height: 720px !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    box-sizing: border-box !important;
+  }
+}
+
 </style>
 </head>
 <body>
